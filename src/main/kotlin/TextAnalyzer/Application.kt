@@ -1,8 +1,8 @@
-package textAnalyzer
+package TextAnalyzer
 
 import io.micronaut.runtime.Micronaut.*
 
-fun main(args: Array<String>) {
-	run(*args)
+fun main() {
+	run()
 }
 
