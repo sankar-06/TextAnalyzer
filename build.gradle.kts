@@ -23,7 +23,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     runtimeOnly("ch.qos.logback:logback-classic")
     implementation("io.micronaut:micronaut-validation")
-
+    implementation("com.google.code.gson:gson:2.10")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
 }
