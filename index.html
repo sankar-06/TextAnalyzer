@@ -1,0 +1,48 @@
+<html>
+<head>
+</head>
+<body>
+   <form id="form" method="post">
+       <input type="text", id="body" placeholder="Text"/></br>
+       <input type="submit" value="Submit"/>
+    </form> 
+    <div>
+    <div id="result"></div>
+    </div>
+</body>
+<script>
+var form=document.getElementById('form')
+
+form.addEventListener('submit', function(e){
+ e.preventDefault()
+
+
+ var body=document.getElementById('body').value
+
+ fetch('http://localhost:8080/text/analyze', {
+  method: 'POST',
+  mode: 'cors',
+  body: JSON.stringify({
+    content:body
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+    'Access-Control-Allow-Origin' : "*"
+  }
+  })
+  .then(function(response){ 
+  return response.json()
+    })
+    .then(function(data){
+        console.log(data)
+        res=document.getElementById("result")
+        res.innerHTML = `
+                        word_count = ${data.word_count} <br>
+                        character_count_with_spaces = ${data.character_count_with_spaces} <br>
+                        character_count_without_spaces = ${data.character_count_without_spaces} <br>
+                        line_count = ${data.line_count} <br>
+                        unique_words = ${data.unique_words} <br>`;
+    }).catch(error => console.error('Error:', error)); 
+});
+</script>
+</html>
