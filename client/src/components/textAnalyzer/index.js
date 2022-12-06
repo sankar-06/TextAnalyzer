@@ -11,14 +11,13 @@ const TextAnalyzer = () => {
   const [analysis, setAnalysis] = useState(analysisArray);
 
   const handleSubmit = (e) => {
-    console.log(text);
     analyzeText(
       { content: text },
       ({ data }) => {
-        console.log(data);
         setAnalysis(data);
       },
       (err) => {
+        setAnalysis(err.response.data.content);
         console.log(err);
       }
     );
