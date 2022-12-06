@@ -1,6 +1,12 @@
 micronaut:
   application:
     name: textAnalyzer
+  server:
+    cors:
+      enabled: true
+    single-header: true
+  security:
+    enabled: false
 netty:
   default:
     allocator:
