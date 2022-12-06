@@ -1,3 +1,3 @@
 
-rootProject.name="textAnalyzer"
+rootProject.name="TextAnalyzer"
 

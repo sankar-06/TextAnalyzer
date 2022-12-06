@@ -30,7 +30,7 @@ dependencies {
 
 
 application {
-    mainClass.set("textAnalyzer.ApplicationKt")
+    mainClass.set("TextAnalyzer.ApplicationKt")
 }
 java {
     sourceCompatibility = JavaVersion.toVersion("1.8")
